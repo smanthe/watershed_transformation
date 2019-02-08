@@ -1,4 +1,4 @@
-#include "Watershed.h"
+#include "watershed/Watershed.h"
 #include <iostream>
 #include <opencv2/core.hpp>
 

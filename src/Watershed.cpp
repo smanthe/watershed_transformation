@@ -5,7 +5,7 @@
  *      Author: Stephan Manthe
  */
 
-#include "Watershed.h"
+#include "watershed/Watershed.h"
 #include <opencv2/opencv.hpp>
 #include <vector>
 

@@ -11,7 +11,7 @@ add_executable(watershed
 set_property(TARGET watershed PROPERTY CXX_STANDARD 14)
 
 target_include_directories(watershed PUBLIC
-    include/watershed
+    include/
     ${OpenCV_INCLUDE_DIRS}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR})
