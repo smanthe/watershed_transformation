@@ -138,7 +138,7 @@ cv::Mat doWatershedSegmentation(
     std::vector<std::vector<std::pair<int, int> > > floodLevelPixels;
     std::vector<float> floodLevel;
     int floodIndex = 0;
-    int coordIndex = 0;
+    size_t coordIndex = 0;
     while (coordIndex < vectorPixelCoordinates.size())
     {
         std::vector<std::pair<int, int> > pixelsAtThisFloodLevel;
@@ -168,9 +168,6 @@ cv::Mat doWatershedSegmentation(
 
         currentFloodLevel += parameters.floodIncrement;
     }
-    
-    int numFloodLevels
-        = (gradientStrengthMax - parameters.prefloodThreshold) / parameters.floodIncrement;
 
     // two queues for neigbours of a pixel and for pixels which must be processed
     std::list<std::pair<int, int> > fifo;
@@ -188,15 +185,6 @@ cv::Mat doWatershedSegmentation(
             // the pixels which are labeled with mask will be processed during this
             // iteration
             labelMatrix.at<int>(currentPixel.second, currentPixel.first) = Mark::MASK;
-
-            // OPTIMIZATION
-            // searching for neighors with labels greater > 0 makes no sence, if
-            // there are no pixels with labels greater 0 if there are no pixels
-            // with labels there can't be pixels with neighbors
-            //
-            // TODO do this with Marks
-            // if (currentLabel == 0)
-            //     continue;
 
             // check the neighbor pixels
             const std::vector<std::pair<int, int> > neighbors

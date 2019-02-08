@@ -56,8 +56,8 @@ cv::Mat visualizeSegments(const cv::Mat labels)
 
 
     cv::Mat vis = cv::Mat::zeros(labels.rows, labels.cols, CV_8UC3);
-    for (size_t i = 0; i < vis.rows; ++i)
-        for (size_t j = 0; j < vis.cols; j++)
+    for (int i = 0; i < vis.rows; ++i)
+        for (int j = 0; j < vis.cols; j++)
         {
             const int idx = labels.at<int>(i, j);
             if (idx == -1)
