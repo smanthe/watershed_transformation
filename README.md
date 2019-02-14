@@ -3,7 +3,8 @@
 This repository provides an implementation of the watershed algorithm from Pierre Soille which is based on the proposed algorithm in [1].
 It is implemented with two small modifications which focus on reducing oversegmentation.
 In contrast to the OpenCV implementation of the watershed algorithm, this algorithm does not require seedpoints.
-The algorithm can be controlled by the following parameters.
+Instead it starts new segments at local minimas.
+The algorithm can be controlled by the parameters described in the following sections.
 
 ![Input Image](example_image.png)
 ![Segmented Image](example_segmentation.png)
