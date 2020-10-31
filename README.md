@@ -10,7 +10,7 @@ The algorithm can be controlled by the parameters described in the following sec
 ![Segmented Image](example_segmentation.png)
 
 
-## Preflod
+## Preflood
 
 The preflood initializes the flood level of the algorithem with an initial value.
 Due to this value the flood has already reached an level at which small lakes are flooded and fused to larger lakes.
